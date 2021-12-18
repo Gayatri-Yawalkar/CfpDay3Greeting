@@ -20,9 +20,10 @@ public class GreetingController {
 	}
 	 @GetMapping("/last") 
 	 public Greeting greeting(@RequestParam(value="firstName",defaultValue="World") String firstName,
-			     @RequestParam(value="lastName") String lastName) { 
+			 					@RequestParam(value="lastName") String lastName) { 
 		 User user=new User(); 
 		 user.setFirstName(firstName);
 		 user.setLastName(lastName);
-		 return greetingService.addGreeting(user); }
+		 return greetingService.addGreeting(user); 
+	}
 }
