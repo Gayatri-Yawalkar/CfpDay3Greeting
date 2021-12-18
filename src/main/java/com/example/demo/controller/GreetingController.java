@@ -18,4 +18,11 @@ public class GreetingController {
 		user.setFirstName(name);
 		return greetingService.addGreeting(user);
 	}
+	 @GetMapping("/last") 
+	 public Greeting greeting(@RequestParam(value="firstName",defaultValue="World") String firstName,
+			     @RequestParam(value="lastName") String lastName) { 
+		 User user=new User(); 
+		 user.setFirstName(firstName);
+		 user.setLastName(lastName);
+		 return greetingService.addGreeting(user); }
 }
