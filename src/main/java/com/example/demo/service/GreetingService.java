@@ -1,4 +1,5 @@
 package com.example.demo.service;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,9 @@ public class GreetingService implements IGreetingService  {
 	public Greeting getGreetingById(long id) {
 		Optional<Greeting> greeting=greetingRepository.findById(id);
 		return greeting.get();
+	}
+	@Override
+	public List<Greeting> getAllGreeting() {
+		return greetingRepository.findAll();
 	}
 }
