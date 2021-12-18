@@ -21,7 +21,7 @@ public class GreetingController {
 	}
 	 @GetMapping("/last") 
 	 public Greeting greeting(@RequestParam(value="firstName",defaultValue="World") String firstName,
-			 					@RequestParam(value="lastName") String lastName) { 
+			      @RequestParam(value="lastName") String lastName) { 
 		 User user=new User(); 
 		 user.setFirstName(firstName);
 		 user.setLastName(lastName);
@@ -39,12 +39,5 @@ public class GreetingController {
 	 public String delGreeting(@RequestParam(value="id") Long id) { 
 		 greetingService.delById(id);
 		 return "Greeting Deleted";
-	 }
-	 @GetMapping("/editById")
-	 public Greeting editGreeting(@RequestParam(value="id") Long id,
-			 @RequestParam(value="name",defaultValue="World") String name) { 
-		 User user=new User();
-		 user.setFirstName(name);
-		 return greetingService.updateById(id,user);
 	 }
 }
