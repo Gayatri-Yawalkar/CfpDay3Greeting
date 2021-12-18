@@ -6,5 +6,6 @@ public interface IGreetingService {
 	Greeting addGreeting(User user);
 	Greeting getGreetingById(long id);
 	List<Greeting> getAllGreeting();
-	
+	void delById(long id);
+	Greeting updateById(long id,User user);
 }
